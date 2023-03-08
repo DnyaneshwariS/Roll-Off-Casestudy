@@ -1,0 +1,21 @@
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-info">
+ 
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link active" routerLink="/app-register" >Register </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active"  *ngIF="!Isloggedin" routerLink="/app-login">Login</a>
+        </li>
+        <div class="div d-flex justify-content-end">
+           <button (click)="logout()" *ngIf="Isloggedin" routerLink="/app-login">Logout</button>
+           </div>
+      </ul>
+    </div>
+  </nav>

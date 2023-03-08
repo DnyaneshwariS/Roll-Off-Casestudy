@@ -1,0 +1,46 @@
+<!-- <p>login works!</p> -->
+<div class="container">
+    <form [formGroup]="loginForm" class="border border-dark p-3 rounded-3" (ngSubmit)="loginSubmitted()" >
+        <div class="row g-0 ">
+            <div class="col text center p-2 mb-3 bg-info">
+                <span class="fs-3" style="margin-left:180px">Login</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="email" class="form-level">Email Address</label>
+                <input type="email"class="form-control" id="email" formControlName="email">
+                <div class="form-text text-danger" *ngIf="Email.errors?.['required'] &&(Email.dirty || Email.touched)">
+                    Email is Required
+                </div>
+                <div class="form-text text-danger" *ngIf="Email.errors?.['email'] &&(Email.dirty || Email.touched)">
+                    Email is invalid
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="pwd" class="form-level">password</label>
+                <input type="password"class="form-control" id="pwd" formControlName="pwd">
+                <div class="form-text text-danger" *ngIf="PWD.errors?.['required'] &&(PWD.dirty || PWD.touched)">
+                    Password is Required
+                </div>
+                <div class="form-text text-danger" *ngIf="PWD.errors?.['minlength']|| PWD.errors?.['maxlength'] &&(PWD.dirty || PWD.touched)">
+                   Password should be at least 6 and at the max 15 characters long
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 offset-3">
+              <div class="d-grid">
+                  <button type="submit" [disabled]="false" class="btn btn-info">Login</button>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <p style="color: black;">Don't Have an Account?
+                 <a routerLink="/app-register">SignUp</a></p>
+                </div>
+    </form>
+    </div>
+    

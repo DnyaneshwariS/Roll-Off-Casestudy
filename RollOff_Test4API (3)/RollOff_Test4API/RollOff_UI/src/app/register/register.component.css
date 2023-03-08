@@ -1,0 +1,30 @@
+.container{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+
+}
+
+.row{
+    
+    color:white;
+}
+
+/*.col{    width: 200px;}*/
+.form
+{
+    
+    width:300px;
+}
+
+.form-label
+{
+    color:black;
+}
+
+.btn 
+{
+     background-color:deepskyblue;
+      color: white;
+    }
